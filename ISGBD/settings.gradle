@@ -1,0 +1,8 @@
+rootProject.name = 'Cercetas'
+include 'Model'
+include 'Repository'
+include 'Service'
+include 'Server'
+include 'Client'
+include 'RestService'
+

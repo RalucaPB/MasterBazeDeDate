@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Databases>
+    <Database databaseName="Universitate">
+        <Table File="Universitate_Grupa" TableName="Grupa">
+            <Attribute count="4" fk="false" name="CodGrupa" pk="true" reference="" type="int" uk="false"/>
+            <Index file="Universitate_Grupa" attributeName="CodGrupa" type="clustered"/>
+        </Table>
+        <Table File="Universitate_Student" TableName="Student">
+            <Attribute count="13" fk="false" name="Cnp" pk="true" reference="" type="varchar" uk="false"/>
+            <Attribute count="50" fk="false" name="Name" pk="false" reference="" type="varchar" uk="false"/>
+            <Attribute count="4" fk="true" name="CodGrupa" pk="false" reference="Grupa" type="int" uk="false"/>
+            <Index file="Universitate_Student_CodGrupa" attributeName="CodGrupa" type="unclustered"/>
+            <Index file="Universitate_Student" attributeName="Cnp" type="clustered"/>
+        </Table>
+    </Database>
+    <Database databaseName="Muzica">
+        <Table File="Muzica_Artist" TableName="Artist">
+            <Attribute count="4" fk="false" name="Cod" pk="true" reference="" type="int" uk="false"/>
+            <Attribute count="40" fk="false" name="Nume" pk="false" reference="" type="varchar" uk="false"/>
+            <Attribute count="40" fk="false" name="NumeDeScena" pk="false" reference="" type="varchar" uk="true"/>
+            <Index file="Muzica_Artist" attributeName="Cod" type="clustered"/>
+        </Table>
+    </Database>
+    <Database databaseName="Magazin">
+        <Table File="Magazin_Produs" TableName="Produs">
+            <Attribute count="10" fk="false" name="id" pk="true" reference="" type="int" uk="false"/>
+            <Attribute count="40" fk="false" name="nume" pk="false" reference="" type="varchar" uk="false"/>
+            <Index file="Magazin_Produs" attributeName="id" type="clustered"/>
+        </Table>
+        <Table File="Magazin_ProdusePapetarie" TableName="ProdusePapetarie">
+            <Attribute count="10" fk="false" name="id" pk="true" reference="" type="int" uk="false"/>
+            <Attribute count="10" fk="false" name="pret" pk="false" reference="" type="int" uk="false"/>
+            <Attribute count="10" fk="false" name="cantitate" pk="false" reference="" type="int" uk="false"/>
+            <Attribute count="50" fk="false" name="nume" pk="false" reference="" type="varchar" uk="false"/>
+            <Index file="Magazin_ProdusePapetarie" attributeName="id" type="clustered"/>
+        </Table>
+        <Table File="Magazin_Pixuri" TableName="Pixuri"/>
+    </Database>
+    <Database databaseName="Librarie">
+        <Table File="Librarie_Raft" TableName="Raft">
+            <Attribute count="2" fk="false" name="id" pk="true" reference="" type="int" uk="false"/>
+            <Attribute count="2" fk="false" name="cod" pk="false" reference="" type="int" uk="true"/>
+            <Index file="Librarie_Raft" attributeName="id" type="clustered"/>
+            <Index file="Librarie_Raft_cod" attributeName="cod" type="unclustered"/>
+        </Table>
+    </Database>
+</Databases>
